@@ -1,126 +1,164 @@
-# Awesome-Ransomware-Detection-Clean-Recovery
-
 # Awesome Ransomware Detection & Clean Recovery
 
-> A curated list of top Ransomware Detection and Clean Recovery platforms — both SaaS/Hosted commercial security suites and open-source alternatives for detecting encryption behavior, stopping active attacks, and restoring clean data.
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/ishandutta2007/Awesome-Ransomware-Detection-Clean-Recovery/)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Ransomware-Detection-Clean-Recovery/pulls)
+
+> A curated list of top **Ransomware Detection and Clean Recovery** platforms — both enterprise SaaS/Hosted commercial security suites and open-source software for behavioral ransomware detection, canary tripwires, instant rollback, automated isolation, and clean data recovery.
+>
 > 🌟 Star this repo if you find it useful! 🌟
 
 ---
 
 ## 📋 Table of Contents
 
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
 - [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [SentinelOne Singularity](#sentinelone-singularity)
-  - [CrowdStrike Falcon](#crowdstrike-falcon)
-  - [Sophos Intercept X](#sophos-intercept-x)
-  - [Rubrik Security Cloud](#rubrik-security-cloud)
-  - [Druva Ransomware Defense](#druva-ransomware-defense)
-  - [Veeam Ransomware Guarantee](#veeam-ransomware-guarantee)
 - [Open-Source Software](#-open-source-software)
-  - [RansomShield](#ransomshield)
-  - [Warden](#warden)
-  - [honeyfile](#honeyfile)
-  - [sentinel-watch](#sentinel-watch)
-  - [endpoint-security-ai-agent](#endpoint-security-ai-agent)
-  - [LockBit Rescue](#lockbit-rescue)
-  - [RansomTriage](#ransomtriage)
-  - [VaultSentry](#vaultsentry)
 - [Comparison at a Glance](#-comparison-at-a-glance)
 - [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global ransomware protection and recovery market is estimated at **$30.0 Billion to $32.0 Billion** and is projected to expand to **$87.6 Billion to $109.9 Billion** by the mid-2030s, exhibiting a compound annual growth rate (CAGR) of **14.5% to 16.5%**. The sector is **moderately to highly fragmented** rather than a winner-take-all landscape: while platform titans dominate core endpoint XDR and enterprise backup infrastructure, specialized niche vendors thrive across honeypot/canary detection, zero-trust storage validation, memory-dump key extraction, and family-specific decryptor tools.
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Ransomware Detection and Clean Recovery platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, cloud-hosted Ransomware Detection and Clean Recovery suites. Listed in descending order of company size (valuation / market capitalization).
 
-### SentinelOne Singularity
-**Type:** Autonomous endpoint protection with ransomware rollback
-SentinelOne is known for its autonomous response capabilities, including automatic ransomware rollback to a clean state without analyst intervention. Its Storyline visualization connects related events across endpoints, and the agent is lightweight. It is often cited as the most autonomous of the major platforms for minimizing dwell time and automating containment.
-
-### CrowdStrike Falcon
-**Type:** AI-native endpoint protection with threat intelligence
-CrowdStrike is strong for threat detection and visibility, with top-tier threat intelligence and named-adversary attribution. Its Falcon platform provides EDR with real-time response capabilities (RTR) for direct system access. It is particularly strong for heterogeneous OS fleets and large Linux server environments.
-
-### Sophos Intercept X
-**Type:** Deep learning endpoint protection with anti-ransomware
-Intercept X is known for best-in-class ransomware defense through CryptoGuard and deep learning malware detection, with strong ransomware rollback capabilities. It is positioned for mid-market and lean-SOC organizations, often delivered through managed services (Taegis MDR).
-
-### Rubrik Security Cloud
-**Type:** Zero-trust data security with ransomware investigation
-Rubrik provides immutable backup protection, advanced threat detection, and ransomware investigation. Its Threat Monitoring uses Rubrik threat intelligence feeds (YARA rules, file hashes) to scan backups, while Turbo Threat Hunting identifies affected snapshots across thousands of backups in seconds. Quarantining prevents malware reinfection during recovery.
-
-### Druva Ransomware Defense
-**Type:** SaaS data protection with ransomware resilience
-Druva provides immutable, air-gapped backups in the Druva Cloud, with threat hunting capabilities over backup data. Its Cyber Resiliency features include ransomware detection, anomaly analysis, and audit trails, with view-only administrator roles for separation of duties. Remote data wipe capabilities protect data on lost or stolen devices even without an internet connection.
-
-### Veeam Ransomware Guarantee
-**Type:** Data resilience with immutable backups and AI-assisted security
-Veeam Data Platform v13 includes immutable backups by default, a pre-hardened software appliance with automated patching, and AI-powered malware analysis. Its Malware Analysis Agent and Deep Data Analysis Agent within Veeam Intelligence help detect and respond to threats, with integrations into CrowdStrike, Palo Alto Networks, and Microsoft Sentinel.
+| Platform | Company Size (Valuation / Market Cap / Revenue) | Starting Pricing (Specific Tier) | Free Tier / Trial Limit | Key Ransomware Detection & Clean Recovery Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **CrowdStrike Falcon** | **$225B+ Market Cap** (~$4.81B Annual Revenue) | **$59.99 / device / year** ($4.99/mo equivalent, Falcon Go tier; Falcon Pro starts at $99.99/device/year) | **15-day free trial** (up to 100 devices; full access to Falcon Prevent NGAV, Device Control, and USB inspection without credit card) | AI-native endpoint detection and response (EDR/XDR), automated host network isolation, real-time response (RTR) forensic remediation, and Overwatch threat hunting. |
+| **Rubrik Security Cloud** | **$22B+ Market Cap** (~$1.32B Annual Revenue) | **$150+ / TB / year** (Universal Cloud Data Management subscription; typical enterprise deployments start at ~$25,000 to $50,000/year contract value) | **30-day free trial** (SaaS protection trial strictly capped at **500 M365 users** and **10 TB Data Protection Capacity**, or Google Workspace trial capped at 10 users & 500 GB) | Immutable backup snapshots, YARA threat hunting across historical backup snapshots, anomaly encryption blast-radius detection, and quarantine recovery to prevent reinfection. |
+| **Veeam Data Platform** | **$15B Valuation** (~$2.0B+ ARR) | **$155 / workload / year** (Veeam Universal License [VUL] Foundation tier, sold in 10-workload packs at $1,550/year; Advanced tier starts at $189/workload/year) | **Forever-free plan (Community Edition): up to 10 workloads** with full backup & recovery; **30-day free trial** of Enterprise/Premium tier with unlimited workloads | Pre-hardened software appliance, zero-trust immutable backup repositories, real-time inline I/O entropy scanning, and automated clean disaster recovery orchestration. |
+| **SentinelOne Singularity** | **$8.0B+ Market Cap** (~$1.0B ARR) | **$69.99 / endpoint / year** (Singularity Core tier; Singularity Complete EDR with Rollback starts at $179.99/endpoint/year) | **30-day free trial** (Proof-of-Concept license through sales/authorized partners, supporting up to 100-500 test endpoints; no credit-card required) | Autonomous behavioral AI engine, Storyline cross-process telemetry correlation, and instant 1-click VSS/kernel-driver automated rollback to restore pristine unencrypted files. |
+| **Sophos Intercept X** | **$4.0B Valuation** (~$1.0B+ Revenue) | **$35.00 / user / year** (Intercept X Advanced endpoint license for 100-499 seats; ~$59.00/user/year for smaller 10-49 seat deployments) | **30-day free trial** (Full access to Sophos Central and Intercept X Advanced with XDR for up to 1,000 users/endpoints) | CryptoGuard anti-ransomware driver that inspects file header modifications and automatically halts rogue encryption processes while rolling back affected files from local cache. |
+| **Druva Cyber Resilience** | **$2.0B Valuation** (~$200M+ SaaS ARR) | **$2.50 / user / month** (~$30.00/user/year, Druva inSync Cloud Apps Enterprise; Endpoint Protection starts at $4.00/user/month billed annually) | **30-day free trial** (Self-service evaluation tenant with interactive onboarding; extendable up to a **hard cap of 60 days** before requiring commercial upgrade) | 100% cloud-native SaaS backup, air-gapped immutable cloud vault, automated unusual entropy and bulk modification anomaly detection, with curated clean recovery points. |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven Ransomware Detection and Clean Recovery tools. The open-source ecosystem is **active and growing**, with strong options for behavioral detection, canary files, and recovery utilities.
+Self-hosted, community-driven tools for behavioral detection, canary file tripwires, kernel-level eBPF monitoring, and free cryptographic recovery decryptors. 
 
-### RansomShield
-**Stack:** Rust / Linux (fanotify) | **License:** Open Source
-RansomShield is a security daemon for Linux servers that protects against ransomware by monitoring file system activity through fanotify. It combines **entropy scoring**, **burst detection**, and **honeypot files** to identify and stop encryption. In testing across five distros, simulated ransomware was consistently detected and killed after 8 files (default `burst_file_count`), leaving the rest untouched, with only 8 of 300 files (2.7%) affected in a stress run—all recovered intact from quarantine. It includes a **directory-baseline gate** that prevents false positives on legitimate backup workloads, and an **allowlist** that narrows burst/entropy heuristics for trusted tools without disabling honeypot detection. Overhead is negligible (~2 MB RSS). It has been hardened through adversarial testing, fixing gaps like intermittent/partial-encryption evasion (now samples start, middle, and end) and brand-new-subdirectory bypasses [citation:5].
-**Best for:** Linux server administrators wanting a production-tested, low-overhead daemon that detects and kills ransomware behavior while preserving untouched files and quarantining affected ones.
+Sorted in descending order by GitHub stargazers count:
 
-### Warden
-**Stack:** Rust / Linux (fanotify / GTK4) | **License:** Open Source
-Warden is a free, open-source EDR for Linux workstations written in Rust, with ransomware-specific defenses. It includes **fanotify filesystem monitoring**, **YARA scanning**, and **ransomware detection with per-PID, per-directory, and global counters** to catch fork-per-file attacks. Quarantine includes setuid-stripping and cross-process locking. The security model is hardened through adversarial testing: package-manager spoofing detection (checks directory, not just name), TOCTOU mitigations, and privileged action gating via `pkexec`. The GTK4 GUI provides live status, detection history, quarantine management, and exception management, with consequential actions requiring real authentication. It runs as root with systemd sandboxing (`ProtectSystem=strict`, `NoNewPrivileges`, `RestrictSUIDSGID`) [citation:14].
-**Best for:** Linux workstation users wanting a focused, hardened open-source EDR with a desktop dashboard and ransomware-specific detection logic.
+### 1. [Raccine](https://github.com/Neo23x0/Raccine) [![GitHub stars](https://img.shields.io/github/stars/Neo23x0/Raccine?style=social&color=white)](https://github.com/Neo23x0/Raccine/stargazers)
+- **GitHub:** [Neo23x0/Raccine](https://github.com/Neo23x0/Raccine)
+- **Stack:** C++ / Windows (Registry Hooks & Image File Execution Options - IFEO) | **License:** Apache-2.0
+- **Capabilities:** A lightweight ransomware vaccine that intercepts process creation calls to `vssadmin.exe`, `wmic.exe`, `wbadmin.exe`, `bcdedit.exe`, and `powershell.exe`. By preemptively intercepting command-line parameters commonly used by ransomware families to delete Shadow Copies or disable recovery options, Raccine immediately kills the calling process tree before encryption starts.
+- **Best for:** Windows endpoints and servers requiring an instant, zero-overhead behavioral vaccine against shadow copy deletion.
 
-### honeyfile
-**Stack:** Python | **License:** Open Source (PyPI)
-honeyfile plants decoy files (Payroll, passwords, .env, backup.sql) and watches for any modification, deletion, or opening—any change is a tripwire signaling ransomware or an intruder. It uses **sha256 + size fingerprinting** to catch changes even when byte count is preserved, and the baseline manifest carries its own checksum to detect tampering. On Linux, it uses **inotify** to react instantly, catching a decoy merely being opened or read before anything is changed. It supports profiles (office, dev, db), webhook/exec alerts, and one-shot checks for cron. It is explicitly a detection tool, not an encryptor [citation:4].
-**Best for:** Teams wanting a lightweight, low-false-positive tripwire that alerts the moment ransomware touches decoy files, without deploying a full EDR.
+### 2. [Decryptonite](https://github.com/DecryptoniteTeam/Decryptonite) [![GitHub stars](https://img.shields.io/github/stars/DecryptoniteTeam/Decryptonite?style=social&color=white)](https://github.com/DecryptoniteTeam/Decryptonite/stargazers)
+- **GitHub:** [DecryptoniteTeam/Decryptonite](https://github.com/DecryptoniteTeam/Decryptonite)
+- **Stack:** Python / C / Windows & Linux | **License:** Open Source
+- **Capabilities:** A dedicated ransomware detection and mitigation software engine that inspects active file modifications across monitored directories. Utilizes behavioral heuristics to flag rapid mass file renames, unexpected extensions, and entropy spikes, killing malicious threads and isolating untrusted processes.
+- **Best for:** Blue teams and system operators seeking a stand-alone ransomware mitigation and detection prototype.
 
-### sentinel-watch
-**Stack:** Python | **License:** Open Source (PyPI)
-sentinel-watch is a tiny folder watchdog that spots ransomware-like behavior and can block it. It uses four stacked rules: **burst** (N events in M seconds), **entropy** (Shannon on first 1MB), **canary** (`.sentinel/canary.txt` touched), and **notes/exts** (`.locked`, `READ_ME.txt`, words like bitcoin/decrypt). It maintains a **vault of clean copies** for restore, calculates a **risk score** for CI, and supports `watch --response auto` for automated response. It works on Linux and Windows, with no server or signup required [citation:11].
-**Best for:** Users wanting a simple, pip-installable watchdog with clean-copy restore and risk scoring, particularly for personal or small-team folders.
+### 3. [RansomWatch](https://github.com/RafWu/RansomWatch) [![GitHub stars](https://img.shields.io/github/stars/RafWu/RansomWatch?style=social&color=white)](https://github.com/RafWu/RansomWatch/stargazers)
+- **GitHub:** [RafWu/RansomWatch](https://github.com/RafWu/RansomWatch)
+- **Stack:** C / C++ / Windows Kernel Minifilter Driver | **License:** MIT
+- **Capabilities:** An advanced Windows kernel-mode Minifilter filesystem driver designed specifically for real-time ransomware behavioral interception. It monitors `IRP_MJ_CREATE` and `IRP_MJ_WRITE` requests, evaluates write-frequency thresholds and entropy metrics directly at the file system level, and blocks suspicious processes before they can encrypt disk sectors.
+- **Best for:** Security engineers and researchers seeking kernel-level Windows filesystem protection against rapid cryptographic modification.
 
-### endpoint-security-ai-agent
-**Stack:** Python / FastAPI / Next.js / Docker | **License:** Open Source
-A full open-source **AI EDR** that detects and stops ransomware, Cobalt Strike, and living-off-the-land attacks in real time. Features include **ML-powered ransomware detection** (encrypted extensions, high entropy, rapid file changes), autonomous response (auto-kill, quarantine, host isolation), a **Next.js web dashboard** with real-time WebSocket updates, and a **ChatGPT-style AI analyst** for natural language incident queries. It uses osquery for telemetry and supports Windows, macOS, and Linux via Docker Compose [citation:6][citation:15].
-**Best for:** Teams wanting a comprehensive open-source EDR with a modern web dashboard and AI-assisted analysis, accepting the Docker/FastAPI/Next.js stack requirements.
+### 4. [ebpfangel](https://github.com/TomasPhilippart/ebpfangel) [![GitHub stars](https://img.shields.io/github/stars/TomasPhilippart/ebpfangel?style=social&color=white)](https://github.com/TomasPhilippart/ebpfangel/stargazers)
+- **GitHub:** [TomasPhilippart/ebpfangel](https://github.com/TomasPhilippart/ebpfangel)
+- **Stack:** C / Go / Linux eBPF / Machine Learning | **License:** GPL-3.0
+- **Capabilities:** Real-time Linux ransomware detection powered by eBPF probe tracing and machine learning inference. Monitors Linux system calls (`sys_enter_write`, `sys_enter_openat`, `sys_enter_unlink`) in kernel space with virtually zero latency, feeding file write velocity and entropy characteristics into an ML scoring engine to detect encryption in progress.
+- **Best for:** Linux production environments, Kubernetes worker nodes, and container hosts needing lightweight, kernel-native behavioral monitoring.
 
-### LockBit Rescue
-**Stack:** Python / C | **License:** Open Source
-LockBit Rescue is a toolkit for recovering files encrypted by **LockBit 3.0 ("Black")** ransomware without paying, by exploiting a known keystream-reuse weakness. It auto-detects the ransomware extension, groups encrypted files by their RSA-encrypted KEK fingerprint, and recovers the Salsa20 keystream from a long-named file in each group (known-plaintext). It then decrypts other files in the group whose footer fits within the recovered keystream coverage. It is resumable and skips botched decryptions. **Limitation:** Specific to LockBit 3.0 and requires Linux x86_64 with gcc/make/Python [citation:3].
-**Best for:** Victims of LockBit 3.0 ransomware with encrypted files on Linux, wanting a free recovery attempt without paying the ransom, accepting the narrow family-specific scope.
+### 5. [Ransomware-Json-Dataset](https://github.com/codingo/Ransomware-Json-Dataset) [![GitHub stars](https://img.shields.io/github/stars/codingo/Ransomware-Json-Dataset?style=social&color=white)](https://github.com/codingo/Ransomware-Json-Dataset/stargazers)
+- **GitHub:** [codingo/Ransomware-Json-Dataset](https://github.com/codingo/Ransomware-Json-Dataset)
+- **Stack:** JSON / Python | **License:** MIT
+- **Capabilities:** A comprehensive machine-readable dataset compiling metadata, behavioral properties, known file extensions, ransom note filenames, and mitigation indicators for over 1,000+ ransomware variants. Directly powers automated threat detection pipelines and incident response triage tools.
+- **Best for:** SOC engineers and threat detection researchers building automated YARA/SIEM rules or training behavioral ML classifiers.
 
-### RansomTriage
-**Stack:** Python | **License:** Open Source (PyPI)
-RansomTriage is a ransomware identification and triage tool that matches ransom-note text to known families and provides recovery guidance. It includes a catalog of **27+ families** (STOP/Djvu, LockBit, Akira, BlackCat, Black Basta, Phobos, Dharma, Play, Babuk, Hive, Rhysida, BianLian, WannaCry, GandCrab, REvil, and more) with decryptor status, free tools, and source URLs. It confirms a family only when note text matches distinctive phrases (not filenames or extensions alone), checks Bitcoin address checksums, and includes a **first-hour checklist** based on CISA/NIST guidance [citation:7].
-**Best for:** Incident responders and victims needing rapid ransomware family identification and decryptor availability before deciding on recovery strategy.
+### 6. [Prometheus-Decryptor](https://github.com/cycraft-corp/Prometheus-Decryptor) [![GitHub stars](https://img.shields.io/github/stars/cycraft-corp/Prometheus-Decryptor?style=social&color=white)](https://github.com/cycraft-corp/Prometheus-Decryptor/stargazers)
+- **GitHub:** [cycraft-corp/Prometheus-Decryptor](https://github.com/cycraft-corp/Prometheus-Decryptor)
+- **Stack:** Python / Cryptography | **License:** MIT
+- **Capabilities:** A forensic clean-recovery tool developed by CyCraft to decrypt files encrypted by the Prometheus ransomware family (a Thanos ransomware variant). Recovers original filenames and unencrypts customer data without paying ransom demands.
+- **Best for:** Incident response teams recovering systems encrypted by Prometheus ransomware variants.
 
-### VaultSentry
-**Stack:** Python | **License:** Open Source
-VaultSentry monitors backup files nightly, hashing every file to detect tampering, ransomware encryption, corruption, missing files, and sudden size drops. It supports **named snapshots** at any point in time, diffing any two to see exactly what changed, one-click GUI restore, and a daily HTML digest email. It is focused specifically on backup integrity monitoring rather than live endpoint detection [citation:1].
-**Best for:** Teams wanting to verify the integrity of their backup files against tampering or encryption, complementing live endpoint detection with a recovery-focused safety net.
+### 7. [talus-process-monitor](https://github.com/Hartwell-Labs/talus-process-monitor) [![GitHub stars](https://img.shields.io/github/stars/Hartwell-Labs/talus-process-monitor?style=social&color=white)](https://github.com/Hartwell-Labs/talus-process-monitor)
+- **GitHub:** [Hartwell-Labs/talus-process-monitor](https://github.com/Hartwell-Labs/talus-process-monitor)
+- **Stack:** Rust / Linux eBPF | **License:** MIT
+- **Capabilities:** A self-contained, single static-binary eBPF ransomware detection and response agent for Linux. Requires no external kernel modules; performs behavioral scoring directly on filesystem system calls and provides automated process pausing (`SIGSTOP`) and process termination (`SIGKILL`) when encryption bursts occur.
+- **Best for:** DevOps and Linux server administrators needing an easily deployable, standalone binary for Linux server ransomware protection.
+
+### 8. [Warden](https://github.com/Spellskite-coding/Warden) [![GitHub stars](https://img.shields.io/github/stars/Spellskite-coding/Warden?style=social&color=white)](https://github.com/Spellskite-coding/Warden/stargazers)
+- **GitHub:** [Spellskite-coding/Warden](https://github.com/Spellskite-coding/Warden)
+- **Stack:** Rust / Linux (fanotify / GTK4) | **License:** GPL-3.0
+- **Capabilities:** An open-source EDR built for Linux workstations. Features fanotify filesystem monitoring, YARA rule scanning, and multi-tier ransomware detection tracking per-PID, per-directory, and global event burst counters. Isolates ransomware processes with setuid-stripping quarantine and includes a GTK4 live dashboard.
+- **Best for:** Linux desktop users and engineers requiring a transparent, workstation-focused anti-ransomware EDR with local GUI control.
+
+### 9. [RansomShield](https://github.com/Spellskite-coding/RansomShield) [![GitHub stars](https://img.shields.io/github/stars/Spellskite-coding/RansomShield?style=social&color=white)](https://github.com/Spellskite-coding/RansomShield/stargazers)
+- **GitHub:** [Spellskite-coding/RansomShield](https://github.com/Spellskite-coding/RansomShield)
+- **Stack:** Rust / Linux (fanotify) | **License:** GPL-3.0
+- **Capabilities:** High-performance Linux security daemon combining Shannon entropy calculation, burst-rate file event detection, and honeypot canary files. Stops active encryption within 8 files, automatically isolating rogue PIDs and storing recoverable copies in an isolated quarantine directory.
+- **Best for:** Linux server administrators wanting a production-tested, low-overhead daemon (~2 MB RSS) that protects directories and preserves unaffected files.
+
+### 10. [honeyfile](https://github.com/dispersal-wolves/honeyfile) [![GitHub stars](https://img.shields.io/github/stars/dispersal-wolves/honeyfile?style=social&color=white)](https://github.com/dispersal-wolves/honeyfile/stargazers)
+- **GitHub:** [dispersal-wolves/honeyfile](https://github.com/dispersal-wolves/honeyfile)
+- **Stack:** Python / Linux (inotify) | **License:** MIT
+- **Capabilities:** Plants decoy tripwire files (`passwords.txt`, `backup.sql`, `payroll.xlsx`, `.env`) in critical directories and monitors them for modification, deletion, or unauthorized reading via inotify. Emits real-time webhook and executable trigger alerts at the very first moment an intruder or ransomware touches a decoy.
+- **Best for:** System administrators wanting an ultra-lightweight, zero-false-positive early-warning tripwire without deploying complex agent software.
+
+### 11. [endpoint-security-ai-agent](https://github.com/MuthoniGathiithi/endpoint-security-ai-agent) [![GitHub stars](https://img.shields.io/github/stars/MuthoniGathiithi/endpoint-security-ai-agent?style=social&color=white)](https://github.com/MuthoniGathiithi/endpoint-security-ai-agent/stargazers)
+- **GitHub:** [MuthoniGathiithi/endpoint-security-ai-agent](https://github.com/MuthoniGathiithi/endpoint-security-ai-agent)
+- **Stack:** Python / FastAPI / Next.js / Docker | **License:** MIT
+- **Capabilities:** An end-to-end AI EDR platform that detects ransomware, Cobalt Strike beacons, and living-off-the-land attacks in real time. Combines ML file-entropy scoring, osquery telemetry, automated host isolation, and an interactive ChatGPT-style natural-language analyst interface with a Next.js web dashboard.
+- **Best for:** Security teams looking for an open-source EDR platform with modern web dashboards and conversational AI threat investigation.
+
+### 12. [VaultSentry](https://github.com/Egyan07/VaultSentry) [![GitHub stars](https://img.shields.io/github/stars/Egyan07/VaultSentry?style=social&color=white)](https://github.com/Egyan07/VaultSentry/stargazers)
+- **GitHub:** [Egyan07/VaultSentry](https://github.com/Egyan07/VaultSentry)
+- **Stack:** Python / SQLite / GUI | **License:** MIT
+- **Capabilities:** Backup file integrity watchdog that computes nightly SHA-256 hashes of critical backup files to detect silent corruption, tampering, ransomware encryption, or unexpected file size drops. Features multi-snapshot diffing, one-click restore capabilities, and automated email summary digests.
+- **Best for:** Verifying the integrity of local and NAS backup repositories against stealthy ransomware encryption.
+
+### 13. [sentinel-watch](https://github.com/HahaAhhDev/sentinel) [![GitHub stars](https://img.shields.io/github/stars/HahaAhhDev/sentinel?style=social&color=white)](https://github.com/HahaAhhDev/sentinel/stargazers)
+- **GitHub:** [HahaAhhDev/sentinel](https://github.com/HahaAhhDev/sentinel)
+- **Stack:** Python (PyPI `sentinel-watch`) | **License:** MIT
+- **Capabilities:** A folder watchdog utility combining burst rate detection, Shannon entropy calculations on the first 1 MB of altered files, canary file traps, and suspicious extension filtering (`.locked`, `.crypto`, `READ_ME.txt`). Automatically backs up pristine copies to a protected local vault before encryption can compromise them.
+- **Best for:** Lightweight workstation folder monitoring and developer environments.
+
+### 14. [RansomTriage](https://github.com/redhat1032/ransomware-triage) [![GitHub stars](https://img.shields.io/github/stars/redhat1032/ransomware-triage?style=social&color=white)](https://github.com/redhat1032/ransomware-triage/stargazers)
+- **GitHub:** [redhat1032/ransomware-triage](https://github.com/redhat1032/ransomware-triage)
+- **Stack:** Python (PyPI `ransomtriage`) | **License:** MIT
+- **Capabilities:** An offline, privacy-first first-hour incident response triage tool. Matches ransom note signatures against 27+ known families (LockBit, Akira, BlackCat, Phobos, Dharma, WannaCry, STOP/Djvu), verifies cryptocurrency address checksums, checks for free decryptor availability, and generates a CISA/NIST-aligned incident response checklist.
+- **Best for:** Incident responders and blue teams needing fast offline ransomware attribution and decryptor discovery without exfiltrating confidential forensic notes.
 
 ---
 
 ## 📊 Comparison at a Glance
 
-| Software | License | Stack | Detection Method | Automated Response | Recovery Focus | Self-Hosted | Best For |
-|----------|---------|-------|------------------|---------------------|----------------|-------------|----------|
-| **SentinelOne** | Proprietary | Cloud | Behavioral AI | ✅ Rollback | ✅ | ❌ | Autonomous endpoint rollback |
-| **CrowdStrike** | Proprietary | Cloud | AI + threat intel | ✅ RTR | (Backup dependent) | ❌ | Threat intel + response |
-| **Rubrik** | Proprietary | Cloud/Appliance | YARA + threat intel | ✅ Quarantine | ✅ Immutable backups | (Appliance) | Ransomware investigation + recovery |
-| **Druva** | Proprietary | Cloud | Anomaly + audit | ✅ Remote wipe | ✅ Air-gapped backups | ❌ | SaaS data protection + recovery |
-| **RansomShield** | Open Source | Rust/Linux | Entropy + burst + honeypot | ✅ Kill process | ✅ Quarantine restore | ✅ | Linux server protection |
-| **Warden** | Open Source | Rust/Linux | Entropy + YARA + honeypot | ✅ Kill + quarantine | ✅ Quarantine | ✅ | Linux workstation EDR |
-| **honeyfile** | Open Source | Python | Canary tripwire | ✅ Alert/webhook/exec | (Alert only) | ✅ | Early warning tripwire |
-| **sentinel-watch** | Open Source | Python | Burst + entropy + canary | ✅ Kill (auto mode) | ✅ Clean vault | ✅ | Simple folder watchdog |
-| **endpoint-security-ai-agent** | Open Source | Python/FastAPI | ML + heuristics | ✅ Kill + isolate | ✅ Quarantine | ✅ | Full EDR + AI dashboard |
-| **LockBit Rescue** | Open Source | Python/C | N/A (recovery tool) | N/A | ✅ Decrypt LockBit 3.0 | ✅ | LockBit 3.0 file recovery |
-| **RansomTriage** | Open Source | Python | Note text matching | ❌ (Guidance) | (Guidance) | ✅ | Family ID + decryptor guidance |
+| Solution | Deployment Type | Primary Detection Strategy | Automated Defense Action | Recovery & Rollback Mechanism | Target Environment |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **CrowdStrike Falcon** | Enterprise SaaS / Agent | Behavioral AI + Threat Intel | Process Kill + Host Network Isolation | Backup / RTR Remediation | Windows, macOS, Linux, Cloud Workloads |
+| **Rubrik Security Cloud** | SaaS + Appliance Hybrid | Backup Anomaly & Entropy Analysis | Snapshot Quarantine | Immutable Air-Gapped Clean Restore | Enterprise Virtualization, Cloud, M365 |
+| **Veeam Data Platform** | Hybrid SaaS / Self-Hosted | Inline I/O Entropy + Malware Scans | Automated Alert & Quarantine | Instant VM Recovery + Orchestrated Rollback | Hyper-V, VMware, Physical & Cloud Workloads |
+| **SentinelOne Singularity** | Enterprise SaaS / Agent | Kernel Behavioral AI Engine | Process Termination & Network Quarantine | 1-Click Automated VSS Rollback | Multi-OS Enterprise Endpoints & Servers |
+| **Sophos Intercept X** | Enterprise SaaS / Agent | CryptoGuard Deep Learning Detection | Kill Encryption Thread + Isolate | Automatic File Cache Rollback | Windows & macOS Endpoints & Servers |
+| **Druva Cyber Resilience** | 100% Cloud SaaS | Unusual Entropy & Modification Spikes | Remote Lock & Wipe | Multi-Cloud Immutable Snapshot Recovery | SaaS Apps, Endpoints, Hybrid Cloud Workloads |
+| **Raccine** | Open-Source Tool | IFEO Preemptive Process Interception | Kills process tree invoking VSS deletion | Preserves existing Windows Volume Shadow Copies | Windows Desktops & Servers |
+| **Decryptonite** | Open-Source Tool | Behavioral Thresholds & Renames | Process Termination | Quarantine File Restore | Windows & Linux Systems |
+| **RansomWatch** | Open-Source Driver | Minifilter Driver I/O Inspection | Blocks File System `IRP_MJ_WRITE` | Native Filesystem Write Prevention | Windows Desktops & Servers |
+| **ebpfangel** | Open-Source Daemon | eBPF System Call Tracing + ML | Process Termination / Alert | Telemetry-Guided Restoration | Linux Kernels & Container Nodes |
+| **Ransomware-Json-Dataset** | Open-Source Data | Signature & Metadata Taxonomy | Threat Feed Integration | Reference for Decryptor Matching | SIEM, EDR & Research Platforms |
+| **Prometheus-Decryptor** | Open-Source Tool | Cryptographic Keystream Exploitation | Post-Incident Execution | Decrypts Prometheus/Thanos-encrypted files | Compromised Windows Systems |
+| **talus-process-monitor** | Open-Source Daemon | Static eBPF Behavioral Scoring | Process `SIGSTOP` / `SIGKILL` | Blocks Further Encryption In-Flight | Linux Servers & Containers |
+| **Warden** | Open-Source EDR | fanotify + YARA + Event Burst | Process Termination & File Quarantine | Setuid-stripped Quarantine Restore | Linux Workstations |
+| **RansomShield** | Open-Source Daemon | Entropy Scoring + fanotify Burst + Canaries | Kills Rogue PID within 8 files | Restores Affected Files from Quarantine | Linux Servers |
+| **honeyfile** | Open-Source Script | inotify Canary Trap Modification | Webhook Alert / Custom Script Execution | Early Warning (Pre-encryption) | Linux Servers & NAS Shares |
+| **endpoint-security-ai-agent** | Open-Source EDR | ML Entropy Scoring + osquery Telemetry | Process Kill & Host Network Isolation | Quarantine Vault Restoration | Cross-Platform Workstations & Servers |
+| **VaultSentry** | Open-Source Watchdog | Daily SHA-256 Checksum Diffing | Tamper Alert & Digest Notification | 1-Click Clean Snapshot Restoration | Backup Storage Repositories & Local Folders |
+| **sentinel-watch** | Open-Source Tool | Shannon Entropy + Canary File + Extensions | Process Termination | Clean Local Directory Vault | Local Files & Workstation Directories |
+| **RansomTriage** | Open-Source CLI | Ransom Note Regex Pattern Matching | Generates CISA/NIST Incident Plan | Matches Known Free Decryptors | Incident Response Forensics |
 
 ---
 
@@ -128,19 +166,19 @@ VaultSentry monitors backup files nightly, hashing every file to detect tamperin
 
 Contributions are welcome! If you know of an open-source Ransomware Detection or Clean Recovery tool that should be listed here, please open a pull request with:
 
-- Project name and URL
+- Project name and GitHub repository URL
 - Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
+- Technology stack and license
+- Why it stands out in detection or recovery capabilities
 
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the open-source ecosystem **splits** between **detection and response** (RansomShield, Warden, honeyfile, sentinel-watch, endpoint-security-ai-agent) and **recovery utilities** (LockBit Rescue, RansomTriage, VaultSentry). **RansomShield** and **Warden** are the most hardened open-source detection daemons for Linux, both validated through adversarial testing and offering quarantine-based recovery [citation:5][citation:14]. **honeyfile** offers a uniquely simple tripwire approach with strong false-positive avoidance [citation:4]. For recovery, **LockBit Rescue** provides a free decryption path for LockBit 3.0 victims [citation:3], while **RansomTriage** helps identify the family and available decryptors before committing to a recovery strategy [citation:7]. Commercial platforms like SentinelOne and Rubrik remain far more capable for enterprise-scale autonomous response and immutable backup recovery.
+Please ensure the project is actively maintained, genuinely open-source, and includes meaningful detection or clean-recovery features.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This repository is licensed under the [Creative Commons Zero v1.0 Universal](LICENSE) (CC0 1.0) Public Domain Dedication.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+⭐ **If this curated list helps you safeguard your infrastructure, please star the repository!** ⭐
