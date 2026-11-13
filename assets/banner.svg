@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="cyberBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#2563eb" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.4" />
+    </linearGradient>
+
+    <linearGradient id="greenPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <linearGradient id="redWarning" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.45" />
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" fill-opacity="0.3" />
+    </pattern>
+
+    <!-- Card Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-title {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .font-subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+    .font-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    /* Ambient pulse animations */
+    @keyframes pulseOpacity {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.08); }
+    }
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes floatPillSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatPillFast {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+    @keyframes scanLineAnim {
+      0% { transform: translateY(-50px); opacity: 0; }
+      20% { opacity: 0.7; }
+      80% { opacity: 0.7; }
+      100% { transform: translateY(380px); opacity: 0; }
+    }
+    @keyframes statusBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes streamFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .ambient-circle-1 {
+      animation: pulseOpacity 8s ease-in-out infinite;
+      transform-origin: 150px 180px;
+    }
+    .ambient-circle-2 {
+      animation: pulseOpacity 6s ease-in-out infinite reverse;
+      transform-origin: 1050px 180px;
+    }
+    .pill-slow {
+      animation: floatPillSlow 5s ease-in-out infinite;
+    }
+    .pill-fast {
+      animation: floatPillFast 4.2s ease-in-out infinite;
+    }
+    .radar-arm {
+      animation: radarSweep 10s linear infinite;
+      transform-origin: 1060px 180px;
+    }
+    .scanner-line {
+      animation: scanLineAnim 4s ease-in-out infinite;
+    }
+    .status-dot {
+      animation: statusBlink 1.8s ease-in-out infinite;
+    }
+    .data-flow-line {
+      stroke-dasharray: 6 6;
+      animation: streamFlow 2.5s linear infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" fill="url(#cyberGrid)" />
+
+  <!-- Dynamic Ambient Glowing Orbs in Background -->
+  <circle cx="160" cy="180" r="140" fill="#2563eb" filter="url(#glow)" class="ambient-circle-1" />
+  <circle cx="1060" cy="180" r="150" fill="#06b6d4" filter="url(#glow)" class="ambient-circle-2" />
+  <circle cx="600" cy="320" r="180" fill="#4f46e5" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Scanning dynamic line effect across the banner -->
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="url(#cyberBlue)" stroke-width="1.5" stroke-opacity="0.4" class="scanner-line" />
+
+  <!-- ==================== BACKGROUND ANIMATED GRAPH / RADAR ELEMENTS ==================== -->
+  <!-- Left Side: Dynamic Flow Streams & Sensor Nodes -->
+  <g opacity="0.45">
+    <path d="M 40 80 Q 120 130 180 180 T 260 280" fill="none" stroke="#38bdf8" stroke-width="2" class="data-flow-line" />
+    <path d="M 30 260 Q 110 220 170 170 T 280 80" fill="none" stroke="#a855f7" stroke-width="1.8" class="data-flow-line" />
+    
+    <circle cx="180" cy="180" r="4" fill="#38bdf8" />
+    <circle cx="180" cy="180" r="10" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.7" />
+    <circle cx="180" cy="180" r="18" fill="none" stroke="#38bdf8" stroke-width="0.8" opacity="0.4" />
+  </g>
+
+  <!-- Right Side: Threat Radar & Telemetry Display -->
+  <g transform="translate(1060, 180)" opacity="0.55">
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#1e293b" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="3 3" />
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.6" />
+    <line x1="-75" y1="0" x2="75" y2="0" stroke="#334155" stroke-width="0.8" />
+    <line x1="0" y1="-75" x2="0" y2="75" stroke="#334155" stroke-width="0.8" />
+    
+    <!-- Rotating Sweep Arm -->
+    <g class="radar-arm">
+      <line x1="0" y1="0" x2="75" y2="0" stroke="#38bdf8" stroke-width="2" filter="url(#subtleGlow)" />
+      <polygon points="0,0 70,-20 75,0" fill="#38bdf8" fill-opacity="0.15" />
+    </g>
+
+    <!-- Blip Indicators -->
+    <circle cx="34" cy="-28" r="3.5" fill="#f43f5e" class="status-dot" filter="url(#subtleGlow)" />
+    <circle cx="-38" cy="24" r="3" fill="#10b981" />
+  </g>
+
+  <!-- ==================== DYNAMIC FLOATING PILLS / BADGES ==================== -->
+  <!-- Top Left Pill: Immutable Backups -->
+  <g class="pill-slow" transform="translate(130, 48)">
+    <rect width="180" height="32" rx="16" fill="#0f172a" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.6" filter="url(#subtleGlow)" />
+    <circle cx="18" cy="16" r="4.5" fill="#10b981" class="status-dot" />
+    <text x="32" y="20" fill="#93c5fd" class="font-code">🔒 IMMUTABLE VAULTS</text>
+  </g>
+
+  <!-- Bottom Left Pill: Entropy Analyzer -->
+  <g class="pill-fast" transform="translate(110, 280)">
+    <rect width="195" height="32" rx="16" fill="#0f172a" fill-opacity="0.85" stroke="#a855f7" stroke-width="1" stroke-opacity="0.6" filter="url(#subtleGlow)" />
+    <circle cx="18" cy="16" r="4.5" fill="#a855f7" class="status-dot" />
+    <text x="32" y="20" fill="#d8b4fe" class="font-code">⚡ REAL-TIME ENTROPY</text>
+  </g>
+
+  <!-- Top Right Pill: eBPF & Kernel Hooking -->
+  <g class="pill-fast" transform="translate(890, 48)">
+    <rect width="190" height="32" rx="16" fill="#0f172a" fill-opacity="0.85" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.6" filter="url(#subtleGlow)" />
+    <circle cx="18" cy="16" r="4.5" fill="#06b6d4" class="status-dot" />
+    <text x="32" y="20" fill="#67e8f9" class="font-code">🐝 eBPF KERNEL GUARDS</text>
+  </g>
+
+  <!-- Bottom Right Pill: Instant Clean Rollback -->
+  <g class="pill-slow" transform="translate(895, 280)">
+    <rect width="195" height="32" rx="16" fill="#0f172a" fill-opacity="0.85" stroke="#10b981" stroke-width="1" stroke-opacity="0.6" filter="url(#subtleGlow)" />
+    <circle cx="18" cy="16" r="4.5" fill="#10b981" class="status-dot" />
+    <text x="32" y="20" fill="#6ee7b7" class="font-code">✨ 1-CLICK CLEAN ROLLBACK</text>
+  </g>
+
+  <!-- ==================== FOREGROUND: CENTRAL BRANDING (ALWAYS ON TOP) ==================== -->
+  <!-- Center Shield Icon Graphic -->
+  <g transform="translate(600, 78)">
+    <!-- Shield Outer Glow & Fill -->
+    <path d="M 0 -36 L 32 -20 L 32 10 Q 32 34 0 46 Q -32 34 -32 10 L -32 -20 Z" 
+          fill="url(#shieldGrad)" stroke="#38bdf8" stroke-width="2" filter="url(#subtleGlow)" />
+    <!-- Inner Holographic Crest -->
+    <path d="M 0 -26 L 22 -14 L 22 8 Q 22 25 0 35 Q -22 25 -22 8 L -22 -14 Z" 
+          fill="none" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.5" />
+    <!-- Checkmark & Recovery Spark -->
+    <path d="M -10 4 L -3 11 L 11 -3" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Main Repository Category Badge Tag -->
+  <g transform="translate(600, 150)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#1e293b" fill-opacity="0.9" stroke="url(#cyberBlue)" stroke-width="1.2" />
+    <text x="0" y="4" text-anchor="middle" fill="#38bdf8" class="font-code" letter-spacing="1.5">CURATED AWESOME ECOSYSTEM</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="205" text-anchor="middle" class="font-title" font-size="34" fill="#ffffff">
+    Awesome Ransomware Detection
+  </text>
+  <text x="600" y="244" text-anchor="middle" class="font-title" font-size="30" fill="url(#cyberBlue)">
+    &amp; Clean Recovery
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="278" text-anchor="middle" class="font-subtitle" font-size="14.5" fill="#94a3b8">
+    Enterprise SaaS Suites • Open-Source Kernels • Canary Tripwires • Instant Rollback
+  </text>
+
+  <!-- Bottom Accent Line -->
+  <line x1="450" y1="304" x2="750" y2="304" stroke="url(#cyberBlue)" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+</svg>
